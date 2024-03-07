@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{3832b137-74f0-4fa9-af16-a60b81154585}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	Hough: Hough;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Hough();
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
