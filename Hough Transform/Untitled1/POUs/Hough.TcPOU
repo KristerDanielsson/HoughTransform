@@ -136,7 +136,7 @@ END_VAR
       <Implementation>
         <ST><![CDATA[hr:= F_VN_CannyEdgeDetection(ipImageToSearchForEdges,ipImageResultWithEdges,100, 200, hr);
 
-hr:= F_VN_CopyIntoDisplayableImage(ipImageResultWithEdges, ipImageResultWithEdgesDisp, hr);  ]]></ST>
+hr:= F_VN_CopyIntoDisplayableImage(ipImageResultWithEdges, ipImageResultWithEdgesDisp, hr);  //]]></ST>
       </Implementation>
     </Method>
   </POU>
