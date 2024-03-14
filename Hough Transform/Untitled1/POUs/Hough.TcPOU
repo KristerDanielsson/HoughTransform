@@ -102,13 +102,14 @@ ELSIF eState= TCVN_CS_ACQUIRING THEN
 	hr := F_VN_GetForwardIterator(ipCircles,ipIteratorCircles,hr);
 
 	//Get the circles radius, x and y - And draw the result in the coloured imageIn
-FOR iCircle:=0 TO nCircles-1 DO
-	F_VN_GetAt_TcVnVector3_REAL(ipCircles,currentCircle, iCircle,hr);  
-	hr:= F_VN_DrawCircle(REAL_TO_UDINT(currentCircle[0]),REAL_TO_UDINT(currentCircle[1]), REAL_TO_UDINT(currentCircle[2]), ipImageIn,aColorRed,1, hr);
-	hr:= F_VN_DrawPoint(REAL_TO_UDINT(currentCircle[0]),REAL_TO_UDINT(currentCircle[1]), ipImageIn,1,aColorBlue, hr);
-	hr:= F_VN_IncrementIterator(ipIteratorCircles,hr);
-END_FOR
-		
+IF SUCCEEDED(hr) AND nCircles>0 THEN
+	FOR iCircle:=0 TO nCircles-1 DO
+		F_VN_GetAt_TcVnVector3_REAL(ipCircles,currentCircle, iCircle,hr);  
+		hr:= F_VN_DrawCircle(REAL_TO_UDINT(currentCircle[0]),REAL_TO_UDINT(currentCircle[1]), REAL_TO_UDINT(currentCircle[2]), ipImageIn,aColorRed,1, hr);
+		hr:= F_VN_DrawPoint(REAL_TO_UDINT(currentCircle[0]),REAL_TO_UDINT(currentCircle[1]), ipImageIn,1,aColorBlue, hr);
+		hr:= F_VN_IncrementIterator(ipIteratorCircles,hr);
+	END_FOR
+END_IF				
 		//Stop watchdog to limit the time allowed for the functions above. 
 		hrWD := F_VN_StopWatchdog(hrWD, nFunctionsMonitored => nFunctionsMonitored, nFractionProcessed => nFractionProcessed, tRest => tRest);
 		

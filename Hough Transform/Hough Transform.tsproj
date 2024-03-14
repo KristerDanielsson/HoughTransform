@@ -1434,6 +1434,9 @@
 					</Module>
 				</FileSource>
 			</App>
+			<App VisionAppGUID="{2A1B4573-CB36-4484-973B-0D62DE0C75A5}">
+				<Name>Application2</Name>
+			</App>
 		</Vision>
 	</Project>
 </TcSmProject>
